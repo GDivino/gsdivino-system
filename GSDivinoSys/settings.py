@@ -71,6 +71,10 @@ TEMPLATES = [
     },
 ]
 
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+]
+
 WSGI_APPLICATION = 'GSDivinoSys.wsgi.application'
 
 
