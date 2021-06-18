@@ -1,0 +1,33 @@
+{% extends 'GSDivinoApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3 class="text-center">Bills</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Price</th>
+                <th scope="col">Due Date</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for b in bills %}
+            <tr>
+                <td>{{b.name}}</td>
+                <td>{{b.status}}</td>
+                <td>{{b.price}}</td>
+                <td>{{b.due_date}}</td>
+                <td><a href="{% url 'update_bill' pk=b.pk %}" class="btn btn-primary">Update</a></td>
+                <td><a href="{% url 'delete_bill' pk=b.pk %}" class="btn btn-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div id="container">
+        <a href="{% url 'add_bill' %}" class="btn btn-success mt-5" id="add_button">Add Bill</a>
+    </div>
+{% endblock %}

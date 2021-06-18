@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GSDivino App</title>
+        
+        <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'main.css' %}">
+        <script src="{% static '/bootstrap/jquery-3.4.1.slim.min.js' %}"></script>
+		<script src="{% static '/bootstrap/popper.min.js' %}"></script>
+		<script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="{% url 'home' %}" class="navbar-brand">GSDivino</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" role="banner" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chores</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'view_dishes' %}">Dishes</a>
+                            <a class="dropdown-item" href="{% url 'view_laundry' %}">Laundry</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" role="banner" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Others</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'view_aircon' %}">Aircon</a>
+                            <a class="dropdown-item" href="{% url 'view_bills' %}">Bills</a>
+                            <a class="dropdown-item" href="#">Schedule</a>
+                            <a class="dropdown-item" href="#">Wishlist</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container-fluid">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

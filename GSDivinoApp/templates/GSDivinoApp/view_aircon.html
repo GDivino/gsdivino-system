@@ -1,0 +1,29 @@
+{% extends 'GSDivinoApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3 class="text-center">Aircon</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in aircon %}
+            <tr>
+                <td>{{a.name}}</td>
+                <td>{{a.date}}</td>
+                <td><a href="{% url 'update_aircon' pk=a.pk %}" class="btn btn-primary">Update</a></td>
+                <td><a href="{% url 'delete_aircon' pk=a.pk %}" class="btn btn-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div id="container">
+        <a href="{% url 'add_aircon' %}" class="btn btn-success mt-5" id="add_button">Add Aircon</a>
+    </div>
+{% endblock %}

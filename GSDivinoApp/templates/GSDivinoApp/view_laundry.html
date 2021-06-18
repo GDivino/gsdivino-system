@@ -1,0 +1,29 @@
+{% extends 'GSDivinoApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3 class="text-center">Laundry</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for l in laundry %}
+            <tr>
+                <td>{{l.name}}</td>
+                <td>{{l.date}}</td>
+                <td><a href="{% url 'update_laundry' pk=l.pk %}" class="btn btn-primary">Update</a></td>
+                <td><a href="{% url 'delete_laundry' pk=l.pk %}" class="btn btn-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div id="container">
+        <a href="{% url 'add_laundry' %}" class="btn btn-success mt-5" id="add_button">Add Laundry</a>
+    </div>
+{% endblock %}

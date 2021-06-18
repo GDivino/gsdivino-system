@@ -1,0 +1,45 @@
+* {
+    background-color: #f8f8f8;
+}
+
+/* Home Page */
+#dashboard_card {
+    margin: 2em;
+    height: 100px;
+    padding: auto;
+    text-align: center;
+    background-color: #f4f4f4!important;
+}
+
+#dashboard_title {
+    margin: auto;
+    background-color: inherit!important;
+}
+
+#card-body {
+    background-color: inherit!important;
+}
+
+/* Tables */
+table {
+    margin: auto;
+    width: 50em!important;
+}
+
+#container {
+    width: 100%;
+    align-content: center;
+}
+
+#add_button {
+    margin-bottom: 5em;
+    position: relative;
+    transform: translate(-50%);
+    left: 50%;
+}
+
+/* Forms */
+#form_card {
+    width: 70vw;
+    margin: auto;
+}

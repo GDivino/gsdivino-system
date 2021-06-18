@@ -1,0 +1,33 @@
+{% extends 'GSDivinoApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <form class="card" action="{% url 'update_dish' pk=dish.pk %}" method="POST" id="form_card"> {% csrf_token %}
+        <div class="card-body">
+            <h4 class="card-title">Update Dish</h4>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <select name="name" class="form-control" required>
+                    <option value selected disabled>--select an option--</option>
+                    {% for f in fam %}
+                    <option value="{{f.pk}}">{{f.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Date</label>
+                <input type="datetime-local" name="date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="meal">Meal</label>
+                <select name="meal" class="form-control" required>
+                    <option disabled selected value>--select an option--</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                </select>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'GSDivinoApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <a href="{% url 'view_aircon' %}" class="col-md card" id="dashboard_card">
+            <div class="card-body" id="card-body">
+                <h4 class="card-title" id="dashboard_title">Aircon</h4>
+            </div>
+        </a>
+        <a href="{% url 'view_dishes' %}" class="col-md card" id="dashboard_card">
+            <div class="card-body" id="card-body">
+                <h4 class="card-title" id="dashboard_title">Dishes</h4>
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <a href="{% url 'view_laundry' %}" class="col-md card" id="dashboard_card">
+            <div class="card-body" id="card-body">
+                <h4 class="card-title" id="dashboard_title">Laundry</h4>
+            </div>
+        </a>
+        <a href="{% url 'view_bills' %}" class="col-md card" id="dashboard_card">
+            <div class="card-body" id="card-body">
+                <h4 class="card-title" id="dashboard_title">Bills</h4>
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <a href="" class="col-md card" id="dashboard_card">
+            <div class="card-body" id="card-body">
+                <h4 class="card-title" id="dashboard_title">Schedule</h4>
+            </div>
+        </a>
+        <a href="" class="col-md card" id="dashboard_card">
+            <div class="card-body" id="card-body">
+                <h4 class="card-title" id="dashboard_title">Wishlist</h4>
+            </div>
+        </a>
+    </div>
+{% endblock %}

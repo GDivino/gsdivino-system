@@ -1,0 +1,24 @@
+{% extends 'GSDivinoApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <form class="card" action="{% url 'update_aircon' pk=aircon.pk%}" method="POST" id="form_card"> {% csrf_token %}
+        <div class="card-body">
+            <h4 class="card-title">Update Aircon</h4>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <select name="name" class="form-control" required>
+                    {% for f in fam %}
+                    <option value="{{f.pk}}" {% if f.name == aircon.name %} selected="selected" {% endif %}>{{f.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Date</label>
+                <input type="datetime-local" name="date" class="form-control">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+{% endblock %}

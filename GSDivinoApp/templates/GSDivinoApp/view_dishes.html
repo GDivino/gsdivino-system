@@ -1,0 +1,31 @@
+{% extends 'GSDivinoApp/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h3 class="text-center">Dishes</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Meal</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in dishes %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.date}}</td>
+                <td>{{d.meal}}</td>
+                <td><a href="{% url 'update_dish' pk=d.pk %}" class="btn btn-primary">Update</a></td>
+                <td><a href="{% url 'delete_dish' pk=d.pk %}" class="btn btn-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div id="container">
+        <a href="{% url 'add_dish' %}" class="btn btn-success mt-5" id="add_button">Add Dish</a>
+    </div>
+{% endblock %}
