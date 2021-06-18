@@ -1,1 +1,1 @@
-web: gunicorn GSDivinoSystem.wsgi --log-file -
+web: gunicorn GSDivinoSys.wsgi --log-file -
