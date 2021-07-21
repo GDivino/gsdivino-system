@@ -9,7 +9,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Date</th>
                 <th></th>
-                <th></th>
+                <th><a href="{% url 'add_aircon' %}" class="btn btn-success" id="add_button">Add Aircon</a></th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +23,4 @@
             {% endfor %}
         </tbody>
     </table>
-    <div id="container">
-        <a href="{% url 'add_aircon' %}" class="btn btn-success mt-5" id="add_button">Add Aircon</a>
-    </div>
 {% endblock %}
