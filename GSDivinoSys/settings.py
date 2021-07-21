@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'gsdivino.herokuapp.com']
 
@@ -169,23 +169,23 @@ USE_TZ = True
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# STATICFILES_DIRS = (
-#     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static'),
-#     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap'),
-#     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/js'),
-#     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/css'),
-# )
-
 STATIC_URL = '/static/'
-STATIC_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'GSDivinoApp/static'),
+    os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap'),
+    os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/js'),
+    os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/css'),
+)
+
+# STATIC_URL = '/static/'
+# STATIC_DIRS = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# prod_db  =  dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(prod_db)
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
