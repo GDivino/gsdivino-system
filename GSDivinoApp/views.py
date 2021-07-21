@@ -11,7 +11,7 @@ def home(request):
 
 # Aircon 
 def view_aircon(request):
-    aircon = Aircon.objects.all()
+    aircon = Aircon.objects.all().order_by("-date")
     return render(request, "GSDivinoApp/view_aircon.html", {"aircon":aircon})
 
 def add_aircon(request):

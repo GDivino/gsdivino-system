@@ -10,7 +10,7 @@
                 <th scope="col">Date</th>
                 <th scope="col">Meal</th>
                 <th></th>
-                <th></th>
+                <th><a href="{% url 'add_dish' %}" class="btn btn-success" id="add_button">Add Dish</a></th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,4 @@
             {% endfor %}
         </tbody>
     </table>
-    <div id="container">
-        <a href="{% url 'add_dish' %}" class="btn btn-success mt-5" id="add_button">Add Dish</a>
-    </div>
 {% endblock %}

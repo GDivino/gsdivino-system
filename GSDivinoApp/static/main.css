@@ -31,12 +31,12 @@ table {
     align-content: center;
 }
 
-#add_button {
+/* #add_button {
     margin-bottom: 5em;
     position: relative;
     transform: translate(-50%);
     left: 50%;
-}
+} */
 
 /* Forms */
 #form_card {
