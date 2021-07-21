@@ -56,7 +56,7 @@ def delete_aircon(request, pk):
 
 # Dishes
 def view_dishes(request):
-    dishes = Dish.objects.all()
+    dishes = Dish.objects.all().order_by("-date")
     return render(request, "GSDivinoApp/view_dishes.html", {"dishes": dishes})
 
 def add_dish(request):
