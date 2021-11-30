@@ -166,26 +166,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'GSDivinoApp/static'),
-    os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap'),
-    os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/js'),
-    os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/css'),
-)
 
 # STATIC_URL = '/static/'
-# STATIC_DIRS = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# STATICFILES_DIRS = (
+#     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static'),
+#     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap'),
+#     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/js'),
+#     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/css'),
+)
+
+STATIC_URL = '/static/'
+STATIC_DIRS = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
+# prod_db  =  dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(prod_db)
