@@ -31,9 +31,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'gsdivino.herokuapp.com']
 
-SECURE_HSTS_SECONDS = 60
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 
 # Application definition
 
