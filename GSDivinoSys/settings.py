@@ -179,6 +179,8 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/css'),
 )
 
+STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
+
 # STATIC_URL = '/static/'
 # STATIC_DIRS = os.path.join(BASE_DIR, 'static')
 

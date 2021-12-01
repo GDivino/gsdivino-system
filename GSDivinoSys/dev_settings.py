@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'gsdivino.herokuapp.com', 'gsdivino-test.herokuapp.com']
 
@@ -177,7 +177,7 @@ USE_TZ = True
 #     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap'),
 #     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/js'),
 #     os.path.join(PROJECT_ROOT, 'GSDivinoApp/static/bootstrap/css'),
-)
+# )
 
 STATIC_URL = '/static/'
 STATIC_DIRS = os.path.join(BASE_DIR, 'static')
